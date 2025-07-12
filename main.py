@@ -24,7 +24,7 @@ def enviar_notificacion(data: NotificacionRequest):
         message = client.messages.create(
             body=mensaje,
             from_=TWILIO_WHATSAPP_NUMBER,
-            to=f"whatsapp:{data.num_telefono}"
+            to=f"whatsapp:+{data.num_telefono}"
         )
         return {"status": "enviado", "sid": message.sid}
     except Exception as e:
